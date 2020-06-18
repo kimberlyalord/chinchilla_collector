@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+from datetime import date
+from django.contrib.auth.models import User
 
 class Chinchilla(models.Model):
     name = models.CharField(max_length=100)
@@ -11,4 +13,4 @@ class Chinchilla(models.Model):
         return self.name
     
     def get_absolute_url(self):
-        return reverse('detail', kwargs={'chinchilla_id': self.id})
+        return reverse('detail', kwargs={'pk': self.id})

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Chinchilla List</h1>
+
+{% for chinchilla in chinchillas %}
+<a href="{% url 'detail' chinchilla.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ chinchilla.name }}</span>
+            <p>Color: {{ chinchilla.color }}</p>
+            <p>Description: {{ chinchilla.description }}</p>
+            <p>Age: {{ chinchilla.age }}</p>
+        </div>
+    </div>
+</a>
+{% endfor %}
+
+{% endblock %}
