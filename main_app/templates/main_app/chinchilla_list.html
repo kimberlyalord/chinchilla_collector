@@ -3,7 +3,7 @@
 
 <h1>Chinchilla List</h1>
 
-{% for chinchilla in chinchillas %}
+{% for chinchilla in object_list %}
 <a href="{% url 'detail' chinchilla.id %}">
     <div class="card">
         <div class="card-content">

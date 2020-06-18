@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
+from .models import Chinchilla
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Chinchilla
 
 # Create your views here.
 def home(request):
@@ -17,3 +17,6 @@ def about(request):
 class ChinchillaList(ListView):
     model = Chinchilla
     
+class ChinchillaDetail(DetailView):
+    model = Chinchilla
+
