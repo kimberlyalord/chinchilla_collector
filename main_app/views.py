@@ -10,13 +10,12 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
-# def chinchillas_index(request):
-#     chinchillas = Chinchilla.objects.order_by('-id')
-#     return render(request, 'chinchillas/index.html', {'chinchillas': chinchillas})
+def chinchillas_detail(request, chinchilla_id):
+    chinchilla = Chinchilla.objects.get(id=chinchilla_id)
+    return render(request, 'chinchillas/detail.html', {
+        'chinchilla': chinchilla,
+    })
 
 class ChinchillaList(ListView):
     model = Chinchilla
     
-class ChinchillaDetail(DetailView):
-    model = Chinchilla
-
