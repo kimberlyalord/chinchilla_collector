@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Chinchilla
+from .models import Chinchilla, Toy
 from .forms import BathForm, FeedingForm
 
 # Create your views here.
@@ -52,3 +52,20 @@ def add_feeding(request, chinchilla_id):
         new_feeding.save()
     return redirect('detail', chinchilla_id=chinchilla_id)
 
+class ToyList(ListView):
+    model = Toy
+
+class ToyDetail(DetailView):
+    model = Toy
+
+class ToyCreate(CreateView):
+    model = Toy
+    fields = '__all__'
+
+class ToyUpdate(UpdateView):
+    model = Toy
+    fields = ['name', 'color']
+
+class ToyDelete(DeleteView):
+    model = Toy
+    success_url = '/toys/'

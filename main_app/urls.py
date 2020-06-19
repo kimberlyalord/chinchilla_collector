@@ -11,5 +11,9 @@ urlpatterns = [
     path('chinchillas/<int:pk>/delete/', views.ChinchillaDelete.as_view(), name='chinchillas_delete'),
     path('chinchillas/<int:chinchilla_id>/add_bath/', views.add_bath, name='add_bath'),
     path('chinchillas/<int:chinchilla_id>/add_feeding/', views.add_feeding, name='add_feeding'),
-
+    path('toys/', views.ToyList.as_view(), name='toys_index'),
+    path('toys/<int:pk>/', views.ToyDetail.as_view(), name='toys_detail'),
+    path('toys/create/', views.ToyCreate.as_view(), name='toys_create'),
+    path('toys/<int:pk>/update/', views.ToyUpdate.as_view(), name='toys_update'),
+    path('toys/<int:pk>/delete/', views.ToyDelete.as_view(), name='toys_delete'),
 ]
