@@ -19,3 +19,10 @@ def chinchillas_detail(request, chinchilla_id):
 class ChinchillaList(ListView):
     model = Chinchilla
     
+class ChinchillaCreate(CreateView):
+    model = Chinchilla
+    fields = '__all__'
+    
+class ChinchillaUpdate(UpdateView):
+    model = Chinchilla
+    fields = ['color', 'description', 'age']

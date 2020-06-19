@@ -10,6 +10,9 @@
         <p>Description: {{ chinchilla.description }}</p>
         <p>Age: {{ chinchilla.age }}</p>
     </div>
+    <div class="card-action">
+        <a href="{% url 'chinchillas_update' chinchilla.id %}">Edit</a>
+      </div>
 </div>
 
 {% endblock %}
