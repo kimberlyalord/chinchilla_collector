@@ -13,12 +13,14 @@ def about(request):
 
 def chinchillas_detail(request, chinchilla_id):
     chinchilla = Chinchilla.objects.get(id=chinchilla_id)
+    toys_available = Toy.objects.exclude(id__in = chinchilla.toys.all().values_list('id'))
     feeding_form = FeedingForm()
     bath_form = BathForm()
     return render(request, 'chinchillas/detail.html', {
         'chinchilla': chinchilla,
         'feeding_form': feeding_form,
         'bath_form': bath_form,
+        'toys': toys_available,
     })
 
 class ChinchillaList(ListView):
