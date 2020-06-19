@@ -4,7 +4,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Chinchilla, Toy
 from .forms import BathForm, FeedingForm
 
-# Create your views here.
+
 def home(request):
     return render(request, 'home.html')
 
@@ -69,3 +69,11 @@ class ToyUpdate(UpdateView):
 class ToyDelete(DeleteView):
     model = Toy
     success_url = '/toys/'
+    
+def add_toy(request, chinchilla_id, toy_id):
+    Chinchilla.objects.get(id=chinchilla_id).toys.add(toy_id)
+    return redirect('detail', chinchilla_id=chinchilla_id)
+
+def remove_toy(request, chinchilla_id, toy_id):
+    Chinchilla.objects.get(id=chinchilla_id).toys.remove(toy_id)
+    return redirect('detail', chinchilla_id=chinchilla_id)
