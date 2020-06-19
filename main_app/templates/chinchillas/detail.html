@@ -12,7 +12,8 @@
     </div>
     <div class="card-action">
         <a href="{% url 'chinchillas_update' chinchilla.id %}">Edit</a>
-      </div>
+        <a href="{% url 'chinchillas_delete' chinchilla.id %}">Delete</a>
+    </div>
 </div>
 
 {% endblock %}

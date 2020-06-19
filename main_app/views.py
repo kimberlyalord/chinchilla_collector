@@ -26,3 +26,7 @@ class ChinchillaCreate(CreateView):
 class ChinchillaUpdate(UpdateView):
     model = Chinchilla
     fields = ['color', 'description', 'age']
+    
+class ChinchillaDelete(DeleteView):
+    model = Chinchilla
+    success_url = '/chinchillas/'

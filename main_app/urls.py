@@ -8,5 +8,6 @@ urlpatterns = [
     path('chinchillas/<int:chinchilla_id>/', views.chinchillas_detail, name='detail'),
     path('chinchillas/create/', views.ChinchillaCreate.as_view(), name='chinchillas_create'),
     path('chinchillas/<int:pk>/update/', views.ChinchillaUpdate.as_view(), name='chinchillas_update'),
+    path('chinchillas/<int:pk>/delete/', views.ChinchillaDelete.as_view(), name='chinchillas_delete'),
     
 ]
