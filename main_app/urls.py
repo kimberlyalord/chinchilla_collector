@@ -11,6 +11,7 @@ urlpatterns = [
     path('chinchillas/<int:pk>/delete/', views.ChinchillaDelete.as_view(), name='chinchillas_delete'),
     path('chinchillas/<int:chinchilla_id>/add_bath/', views.add_bath, name='add_bath'),
     path('chinchillas/<int:chinchilla_id>/add_feeding/', views.add_feeding, name='add_feeding'),
+    path('chinchillas/<int:chinchilla_id>/add_photo/', views.add_photo, name='add_photo'),
     path('chinchillas/<int:chinchilla_id>/add_toy/<int:toy_id>/', views.add_toy, name='add_toy'),
     path('chinchillas/<int:chinchilla_id>/remove_toy/<int:toy_id>/', views.remove_toy, name='remove_toy'),
     path('toys/', views.ToyList.as_view(), name='toys_index'),
